@@ -1,0 +1,19 @@
+/* CategoryMenu.css */
+
+.category-menu {
+    display: flex;
+    justify-content: center; /* Выравнивание по горизонтали по центру */
+    align-items: center; /* Выравнивание по вертикали по центру */
+    height: 35px; /* Установка высоты меню */
+}
+
+.category-item {
+    display: flex; /* Добавление flex-контейнера */
+    align-items: center; /* Выравнивание элементов по горизонтали по центру */
+    padding: 5px 10px; /* Задайте желаемые отступы вокруг текста категории */
+    cursor: pointer;
+}
+
+    .category-item:hover {
+        color: #ff0000; /* Цвет текста при наведении */
+    }
