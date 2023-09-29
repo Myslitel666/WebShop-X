@@ -11,13 +11,13 @@ import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
 const CategoryMenu: React.FC = () => {
     // Здесь вы можете получить категории товаров из вашего API или хранилища
     const categoriesWithIcons = [
-        { name: 'Clothes and shoes', icon: <CheckroomIcon />}, 
+        { name: 'Clothes and shoes', icon: <CheckroomIcon /> },
         { name: 'Electronics', icon: <CableIcon /> },
         { name: 'House and garden', icon: <YardIcon /> },
         { name: 'Childen\'s goods', icon: <StrollerIcon /> },
         { name: 'Food', icon: <RestaurantIcon /> },
         { name: 'Appliances', icon: <CoffeeMakerIcon /> }
-        ]; // Пример данных
+    ]; // Пример данных
 
     return (
         <div className="category-menu">

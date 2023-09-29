@@ -16,21 +16,21 @@ const PopularProducts: React.FC = () => {
 
     return (
         <Paper elevation={3} sx={{ paddingLeft: '20px', paddingTop: '10px', paddingRight: '20px', boxShadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.1)' }}>
-            <Typography fontWeight="bold" variant="h5" color="red">Popular Products</Typography>
+            <Typography fontWeight="bold" variant="h5" color="">Popular Products</Typography>
             <Grid container spacing={2} sx={{ paddingTop: '10px', paddingBottom: '20px' }}>
                 {popularProducts.map((product) => (
                     <Grid item xs={2} md={2} key={product.id}>
-                        <Box sx={{ border: '1px solid #ccc', borderRadius: '10px', padding: '10px', textAlign: 'center' }}>
+                        <Box sx={{ border: '1px solid #e53935', borderRadius: '10px', padding: '10px', textAlign: 'center' }}>
                             {/* Фотография товара */}
-                            <img 
+                            <img
                                 src={product.image}
                                 alt={product.name}
                                 style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginTop: '5px' }}
                             />
                             {/* Информация о товаре */}
 
-                                <Typography fontWeight="bold" variant="h5" color="red" sx={{ marginTop: '7px' }}>{product.price} ₽</Typography>
-                                <Typography className="product-name" variant="subtitle1">{product.name}</Typography>
+                            <Typography fontWeight="bold" variant="h5" color="#f44336" sx={{ marginTop: '7px' }}>{product.price} ₽</Typography>
+                            <Typography className="product-name" variant="subtitle1" >{product.name}</Typography>
 
                             <Button variant="contained" color="primary" sx={{ marginBottom: '5px' }}>Add to Cart</Button>
                         </Box>

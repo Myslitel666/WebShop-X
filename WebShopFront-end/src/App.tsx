@@ -1,15 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
-import Home from './Components/Pages/Home/Home'; // Импортируйте компонент главной страницы
+import Home from './Components/Pages/Home/Home'; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 const theme = createTheme({
+    typography: {
+        fontFamily: 'Merienda, cursive' // Р—Р°РјРµРЅРёС‚Рµ 'Cinzel' РЅР° РІР°С€ С€СЂРёС„С‚
+    },
     palette: {
-        mode: 'dark', // Устанавливаем темный режим
+        mode: 'dark', // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         primary: {
-            main: '#90caf9', // Основной цвет вашего сайта
+            main: '#e53935', // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ,
+            dark: '#8e24aa',
+            contrastText: '#fff'
         },
-        // Добавьте другие цвета и настройки по желанию
+        secondary: {
+            main: '#9c27b0', // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+            dark: '#4a148c',
+            contrastText: '#fff'
+        },
+
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     },
 });
 
@@ -19,7 +30,7 @@ function App() {
             <CssBaseline />
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home />} /> {/* Маршрут для главной страницы */}
+                    <Route path="/" element={<Home />} /> {/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */}
                 </Routes>
             </Router>
         </ThemeProvider>
