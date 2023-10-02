@@ -15,8 +15,6 @@ public partial class WebShopXContext : DbContext
     {
     }
 
-    public virtual DbSet<Category> Categories { get; set; }
-
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
@@ -24,6 +22,8 @@ public partial class WebShopXContext : DbContext
     public virtual DbSet<OrderStatusDirectory> OrderStatusDirectories { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
+
+    public virtual DbSet<ProductCategory> ProductCategories { get; set; }
 
     public virtual DbSet<Review> Reviews { get; set; }
 
@@ -35,20 +35,6 @@ public partial class WebShopXContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-            entity.Property(e => e.CategoryName)
-                .HasMaxLength(256)
-                .IsUnicode(false);
-            entity.Property(e => e.ParentCategoryId).HasColumnName("ParentCategoryID");
-
-            entity.HasOne(d => d.ParentCategory).WithMany(p => p.InverseParentCategory)
-                .HasForeignKey(d => d.ParentCategoryId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Categories_Categories");
-        });
-
         modelBuilder.Entity<Order>(entity =>
         {
             entity.Property(e => e.OrderId).HasColumnName("OrderID");
@@ -112,6 +98,21 @@ public partial class WebShopXContext : DbContext
                 .HasForeignKey(d => d.CategoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Products_Categories");
+        });
+
+        modelBuilder.Entity<ProductCategory>(entity =>
+        {
+            entity.HasKey(e => e.CategoryId).HasName("PK_Categories");
+
+            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+            entity.Property(e => e.CategoryName)
+                .HasMaxLength(256)
+                .IsUnicode(false);
+            entity.Property(e => e.ParentCategoryId).HasColumnName("ParentCategoryID");
+
+            entity.HasOne(d => d.ParentCategory).WithMany(p => p.InverseParentCategory)
+                .HasForeignKey(d => d.ParentCategoryId)
+                .HasConstraintName("FK_Categories_Categories");
         });
 
         modelBuilder.Entity<Review>(entity =>

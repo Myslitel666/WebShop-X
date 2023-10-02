@@ -17,11 +17,11 @@ public partial class Product
 
     public string? ImageUrl { get; set; }
 
-    public virtual Category Category { get; set; } = null!;
+    public int? SoldCount { get; set; }
+
+    public virtual ProductCategory Category { get; set; } = null!;
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-
-    public int? SoldCount { get; set; }
 }

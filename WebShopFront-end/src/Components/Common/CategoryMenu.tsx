@@ -1,32 +1,30 @@
-﻿import React from 'react';
+﻿import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './CategoryMenu.css'; // Импортируйте стили
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import CableIcon from '@mui/icons-material/Cable';
-import YardIcon from '@mui/icons-material/Yard';
-import StrollerIcon from '@mui/icons-material/Stroller';
-import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
-
 
 const CategoryMenu: React.FC = () => {
-    // Здесь вы можете получить категории товаров из вашего API или хранилища
-    const categoriesWithIcons = [
-        { name: 'Clothes and shoes', icon: <CheckroomIcon /> },
-        { name: 'Electronics', icon: <CableIcon /> },
-        { name: 'House and garden', icon: <YardIcon /> },
-        { name: 'Childen\'s goods', icon: <StrollerIcon /> },
-        { name: 'Food', icon: <RestaurantIcon /> },
-        { name: 'Appliances', icon: <CoffeeMakerIcon /> }
-    ]; // Пример данных
+    const [data, setData] = useState<string[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get<string[]>('https://localhost:7275/api/home/categories');
+                setData(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []); // Пустой массив зависимостей, чтобы useEffect выполнился только один раз после монтирования компонента
 
     return (
         <div className="category-menu">
-            {categoriesWithIcons.map((category, index) => (
-                <div key={index} className="category-item">
-                    {category.icon} {/* Используйте иконку здесь */}
-                    {category.name}
-                </div>
-            ))}
+            {data.map((category, index) => (
+            <div key={index} className="category-item">
+                {category} {/* Используйте иконку здесь */}
+            </div>
+        ))}
         </div>
     );
 };

@@ -8,25 +8,30 @@ namespace WebShopBack_end.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private readonly WebShopXContext _dbContext;
+        private WebShopXContext _dbContext;
 
-        public HomeController(WebShopXContext dbContext)
+        public HomeController()
         {
-            _dbContext = dbContext;
+            _dbContext = new ();
         }
 
         [HttpGet("categories")]
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetDepartments()
         {
-            var categories = await _dbContext.Categories.ToListAsync();
-            return Ok(categories);
-        }
+            try
+            {
+                var departments = await _dbContext.ProductCategories
+                    .Where(c => c.ParentCategoryId == null)
+                    .Select(c => c.CategoryName)
+                    .ToListAsync();
 
-        [HttpGet("popular")]
-        public async Task<IActionResult> GetPopularProducts()
-        {
-            var popularProducts = await _dbContext.Products.OrderByDescending(p => p.SoldCount).Take(10).ToListAsync();
-            return Ok(popularProducts);
+                return Ok(departments);
+            }
+            catch (Exception ex)
+            {
+                // Логируйте ошибку или верните ошибку сервера
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
         }
     }
 }
