@@ -1,14 +1,27 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './CategoryMenu.css'; // Импортируйте стили
+import './CategoryMenu.css';
+import { Checkroom, Restaurant, Cable, Yard, Stroller, CoffeeMaker } from '@mui/icons-material';
+
+const renderIcon = (iconName: string) => {
+const iconMappings: { [key: string]: React.ReactNode } = {
+    'Checkroom': <Checkroom />,
+    'Restaurant': <Restaurant />,
+    'Cable': <Cable />,
+    'Yard': <Yard />,
+    'Stroller': <Stroller />,
+    'CoffeeMaker': <CoffeeMaker />,
+    };
+    return iconMappings[iconName] || null;
+};
 
 const CategoryMenu: React.FC = () => {
-    const [data, setData] = useState<string[]>([]);
+    const [data, setData] = useState<{ categoryName: string; iconUrl: string }[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<string[]>('https://localhost:7275/api/home/categories');
+                const response = await axios.get<{ categoryName: string; iconUrl: string }[]>('https://localhost:7275/api/home/categories');
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -16,15 +29,18 @@ const CategoryMenu: React.FC = () => {
         };
 
         fetchData();
-    }, []); // Пустой массив зависимостей, чтобы useEffect выполнился только один раз после монтирования компонента
+    }, []);
+
+    console.log(data)
 
     return (
         <div className="category-menu">
             {data.map((category, index) => (
-            <div key={index} className="category-item">
-                {category} {/* Используйте иконку здесь */}
-            </div>
-        ))}
+                <div key={index} className="category-item">
+                    {renderIcon(category.iconUrl) || <div>No Icon</div>}
+                    {category.categoryName}
+                </div>
+            ))}
         </div>
     );
 };

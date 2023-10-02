@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -88,8 +88,7 @@ public partial class WebShopXContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.ImageUrl)
                 .HasMaxLength(256)
-                .IsUnicode(false)
-                .HasColumnName("ImageURL");
+                .IsUnicode(false);
             entity.Property(e => e.PoductName)
                 .HasMaxLength(256)
                 .IsUnicode(false);
@@ -106,6 +105,9 @@ public partial class WebShopXContext : DbContext
 
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.CategoryName)
+                .HasMaxLength(256)
+                .IsUnicode(false);
+            entity.Property(e => e.ImageUrlOrNameIcon)
                 .HasMaxLength(256)
                 .IsUnicode(false);
             entity.Property(e => e.ParentCategoryId).HasColumnName("ParentCategoryID");

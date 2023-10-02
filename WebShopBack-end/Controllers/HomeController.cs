@@ -12,7 +12,7 @@ namespace WebShopBack_end.Controllers
 
         public HomeController()
         {
-            _dbContext = new ();
+            _dbContext = new WebShopXContext();
         }
 
         [HttpGet("categories")]
@@ -20,12 +20,12 @@ namespace WebShopBack_end.Controllers
         {
             try
             {
-                var departments = await _dbContext.ProductCategories
+                var categories = await _dbContext.ProductCategories
                     .Where(c => c.ParentCategoryId == null)
-                    .Select(c => c.CategoryName)
+                    .Select(c => new { CategoryName = c.CategoryName, IconUrl = c.ImageUrlOrNameIcon })
                     .ToListAsync();
 
-                return Ok(departments);
+                return Ok(categories);
             }
             catch (Exception ex)
             {

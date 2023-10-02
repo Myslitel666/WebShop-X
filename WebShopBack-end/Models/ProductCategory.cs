@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Models;
@@ -10,6 +10,8 @@ public partial class ProductCategory
     public string? CategoryName { get; set; }
 
     public int? ParentCategoryId { get; set; }
+
+    public string? ImageUrlOrNameIcon { get; set; }
 
     public virtual ICollection<ProductCategory> InverseParentCategory { get; set; } = new List<ProductCategory>();
 

@@ -3,24 +3,17 @@
 .category-menu {
     display: flex;
     justify-content: center;
-    /* ������������ �� ����������� �� ������ */
     align-items: center;
-    /* ������������ �� ��������� �� ������ */
     height: 35px;
-    /* ��������� ������ ���� */
 }
 
 .category-item {
     display: flex;
-    /* ���������� flex-���������� */
     align-items: center;
-    /* ������������ ��������� �� ����������� �� ������ */
     padding: 5px 10px;
-    /* ������� �������� ������� ������ ������ ��������� */
     cursor: pointer;
 }
 
 .category-item:hover {
     color: red;
-    /* ���� ������ ��� ��������� */
 }

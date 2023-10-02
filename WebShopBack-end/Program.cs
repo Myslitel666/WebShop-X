@@ -1,6 +1,10 @@
 using Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
+using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
+using System.IO;
+using System.Runtime.Intrinsics.X86;
 
 namespace WebShopBack_end
 {
@@ -41,19 +45,12 @@ namespace WebShopBack_end
             app.UseAuthorization();
 
             app.UseCors(MyAllowSpecificOrigins);
-
             app.MapControllers();
 
-            app.MapGet("/api/Department", async () =>
+            app.MapGet("/api/categories/icon", () =>
             {
-                WebShopXContext dbContext = new();
-
-                var departments = await dbContext.ProductCategories
-                    .Where(c => c.ParentCategoryId == null)
-                    .Select(c => c.CategoryName)
-                    .ToListAsync();
-
-                return Results.Json(departments);
+                // Вместо возвращения кода иконки, верните только имя иконки
+                return Results.Text("CoffeeMaker");
             });
 
             app.Run();
