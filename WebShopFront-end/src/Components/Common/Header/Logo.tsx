@@ -13,7 +13,10 @@ const Logo = () => {
     };
 
     return (
-        <div className="logo" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ cursor: 'pointer', marginRight: '10px' }}>
+        <div className="logo"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{ cursor: 'pointer', marginRight: '10px' }}>
             <img
                 src="/images/store-x.png"
                 alt="Store Icon"
@@ -24,7 +27,6 @@ const Logo = () => {
                 alt="Store Icon"
                 className={isHovered ? '' : 'hidden'}
             />
-            {/* Изображение магазина */}
         </div>
     );
 };

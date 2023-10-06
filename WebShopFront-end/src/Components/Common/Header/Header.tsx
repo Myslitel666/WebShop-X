@@ -18,10 +18,17 @@ const Header: React.FC = () => {
                 <Logo />
                 <ShopName />
                 <div style={{ flexGrow: 1 }}></div>
-                <div style={{ display: 'flex', alignItems: 'center', marginRight: '10px' }}>
+                <div style={{
+                    display: 'flex', alignItems: 'center',
+                    marginRight: '10px'
+                }}>
                     <InputBase
                         placeholder={"Search in the WebShop X..."}
-                        sx={{ width: '300px', backgroundColor: '#F3F3F3', color: "#212121", paddingLeft: '10px', marginRight: '10px' }}
+                        sx={{
+                            width: '300px', backgroundColor: '#F3F3F3',
+                            color: "#212121", paddingLeft: '10px',
+                            marginRight: '10px'
+                        }}
                     />
                     <Button
                         variant="contained"
@@ -32,10 +39,18 @@ const Header: React.FC = () => {
                         Search
                     </Button>
                 </div>
-                <Button variant="outlined" color="primary" style={{ marginRight: '10px', borderWidth: '2px' }}>
+                <Button variant="outlined" color="primary"
+                    style={{
+                        marginRight: '10px',
+                        borderWidth: '2px'
+                    }}>
                     Sign in
                 </Button>
-                <Button variant="outlined" color="primary" style={{ marginRight: '-12px', borderWidth: '2px' }}>
+                <Button variant="outlined" color="primary"
+                    style={{
+                        marginRight: '-12px',
+                        borderWidth: '2px'
+                    }}>
                     Sign up
                 </Button>
             </Toolbar>

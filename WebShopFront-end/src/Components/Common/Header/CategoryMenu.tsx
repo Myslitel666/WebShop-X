@@ -2,7 +2,10 @@
 import axios from 'axios';
 
 //MUI Import
-import { Checkroom, Restaurant, Cable, Stroller, CoffeeMaker, BeachAccess } from '@mui/icons-material';
+import {
+    Checkroom, Restaurant, Cable,
+    Stroller, CoffeeMaker, BeachAccess
+} from '@mui/icons-material';
 import ArchiveIcon from '@mui/icons-material/Archive';
 
 //CSS Import
@@ -27,7 +30,9 @@ const CategoryMenu: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get<{ categoryName: string; iconUrl: string }[]>('https://localhost:7275/api/home/categories');
+                const response = await axios.get<{
+                    categoryName: string; iconUrl: string
+                    }[]>('https://localhost:7275/api/home/categories');
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

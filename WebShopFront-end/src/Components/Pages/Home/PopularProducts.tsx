@@ -6,7 +6,10 @@ import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
 
 const PopularProducts: React.FC = () => {
-    const [popularProducts, setPopularProducts] = useState<{ productId: number; productName: string; price: number; imageUrl: string }[]>([]);
+    const [popularProducts, setPopularProducts] = useState<{
+        productId: number; productName: string;
+        price: number; imageUrl: string
+    }[]>([]);
 
     const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
 
@@ -38,7 +41,10 @@ const PopularProducts: React.FC = () => {
     return (
         <Paper elevation={3} sx={{ paddingLeft: '20px', paddingTop: '13px', paddingRight: '20px'}}>
             <Typography fontWeight="bold" variant="h5">Popular Products</Typography>
-            <Grid container spacing={2} sx={{ paddingTop: '13px', paddingBottom: '27px' }}>
+            <Grid container spacing={2} sx={{
+                paddingTop: '13px',
+                paddingBottom: '27px'
+                }}>
                 {popularProducts.map((product) => (
                     <Grid item xs={2} md={2} key={product.productId}>
                         <Box
@@ -57,16 +63,31 @@ const PopularProducts: React.FC = () => {
                             <img
                                 src={product.imageUrl}
                                 alt={product.productName}
-                                style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px', marginTop: '5px' }}
+                                style={{
+                                    maxWidth: '100%',
+                                    maxHeight: '200px',
+                                    objectFit: 'cover',
+                                    borderRadius: '8px',
+                                    marginTop: '5px'
+                                }}
                             />
                             {/* Информация о товаре */}
-                            <Typography fontWeight="bold" variant="h5" color="primary" sx={{ marginTop: '7px' }}>
+                            <Typography
+                                fontWeight="bold"
+                                variant="h5"
+                                color="primary"
+                                sx={{ marginTop: '7px' }}>
                                 {product.price} ₽
                             </Typography>
-                            <Typography className="product-name" variant="subtitle1">
+                            <Typography
+                                className="product-name"
+                                variant="subtitle1">
                                 {product.productName}
                             </Typography>
-                            <Button variant="contained" color="primary" sx={{ marginBottom: '5px',  }}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                sx={{ marginBottom: '5px', }}>
                                 Add to Cart
                             </Button>
                         </Box>
