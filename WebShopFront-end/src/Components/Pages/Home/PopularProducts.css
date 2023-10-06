@@ -1,5 +1,11 @@
 .product-name {
     height: 60px;
+    /*Format content*/
+    display: -webkit-box;
+    /*Вертикльный content*/
+    -webkit-box-orient: vertical;
+    /*Обрезка текста под height*/
     overflow: hidden;
-    text-overflow: ellipsis;
+    /*Добавление многоточия после строк*/
+    -webkit-line-clamp: 2;
 }

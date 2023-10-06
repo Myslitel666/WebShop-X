@@ -5,15 +5,20 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
+import './Header.css';
 
 const Header: React.FC = () => {
     return (
         <AppBar position="static">
             <Toolbar>
                 <img src="/images/store-x.png" alt="Store Icon" width="48" height="48"
-                    style={{ marginRight: '10px' }}
-                /> {/* Изображение магазина */}
-                <Typography variant="h6" color="#f44336">WebShop X</Typography>
+                     style={{ marginRight: '10px' }}
+                     className="logo"
+                    /> {/* Изображение магазина */}
+                <Typography className="logo" variant="h6" color="#f44336"
+                     >
+                    WebShop X
+                </Typography>
                 <div style={{ flexGrow: 1 }}></div>
                 <div style={{ display: 'flex', alignItems: 'center', marginRight: '10px' }}>
                     <InputBase

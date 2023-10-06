@@ -1,16 +1,18 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CategoryMenu.css';
-import { Checkroom, Restaurant, Cable, Yard, Stroller, CoffeeMaker } from '@mui/icons-material';
+import { Checkroom, Restaurant, Cable, Stroller, CoffeeMaker, BeachAccess } from '@mui/icons-material';
+import ArchiveIcon from '@mui/icons-material/Archive';
 
 const renderIcon = (iconName: string) => {
 const iconMappings: { [key: string]: React.ReactNode } = {
     'Checkroom': <Checkroom />,
     'Restaurant': <Restaurant />,
     'Cable': <Cable />,
-    'Yard': <Yard />,
+    'BeachAccess': <BeachAccess />,
     'Stroller': <Stroller />,
     'CoffeeMaker': <CoffeeMaker />,
+    'Archive': <ArchiveIcon />,
     };
     return iconMappings[iconName] || null;
 };
@@ -37,7 +39,7 @@ const CategoryMenu: React.FC = () => {
         <div className="category-menu">
             {data.map((category, index) => (
                 <div key={index} className="category-item">
-                    {renderIcon(category.iconUrl) || <div>No Icon</div>}
+                    {renderIcon(category.iconUrl) || <div>No Icon </div>}
                     {category.categoryName}
                 </div>
             ))}

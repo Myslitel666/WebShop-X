@@ -89,7 +89,7 @@ public partial class WebShopXContext : DbContext
             entity.Property(e => e.ImageUrl)
                 .HasMaxLength(256)
                 .IsUnicode(false);
-            entity.Property(e => e.PoductName)
+            entity.Property(e => e.ProductName)
                 .HasMaxLength(256)
                 .IsUnicode(false);
 
