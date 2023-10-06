@@ -20,3 +20,7 @@
 .logo img.hidden {
     opacity: 0;
 }
+
+.logo:hover {
+    transform: scale(1.1);
+}
