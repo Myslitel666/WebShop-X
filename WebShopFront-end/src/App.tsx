@@ -12,12 +12,12 @@ const theme = createTheme({
         mode: 'dark', // Устанавливаем темный режим
         primary: {
             main: '#e53935',
-            dark: '#8e24aa',
+            dark: '#7c4dff',
             contrastText: '#fff' // Текст в контрастном цвете для второстепенного цвета
         },
         secondary: {
-            main: '#9c27b0',
-            dark: '#4a148c',
+            main: '#2196f3',
+            dark: '#2196f3',
             contrastText: '#fff' // Текст в контрастном цвете для второстепенного цвета
         }
     },

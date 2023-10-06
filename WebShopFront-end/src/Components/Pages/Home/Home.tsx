@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '../../Common/Header';
+
+//MyComponents Import
+import Header from '../../Common/Header/Header';
 import PopularProducts from '../Home/PopularProducts';
-import CategoryMenu from '../../Common/CategoryMenu';
+import CategoryMenu from '../../Common/Header/CategoryMenu';
 
 const Home: React.FC = () => {
     return (
