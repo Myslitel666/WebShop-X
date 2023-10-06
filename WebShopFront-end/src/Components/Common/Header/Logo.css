@@ -1,7 +1,22 @@
+/* Logo.css */
 .logo {
-    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 48px; /* Ширина изображения */
+    height: 48px; /* Высота изображения */
 }
 
-.logo:hover {
-    transform: scale(1.1);
-}
+    .logo img {
+        width: 100%; /* Сделать изображение 100% ширины родительского элемента */
+        height: 100%; /* Сделать изображение 100% высоты родительского элемента */
+        object-fit: cover; /* Сохранять пропорции и обрезать изображение, чтобы оно полностью покрывало родительский элемент */
+        position: absolute; /* Абсолютное позиционирование внутри родительского элемента */
+        top: 0;
+        left: 0;
+        transition: opacity 0.3s ease; /* Плавный переход для opacity */
+    }
+
+        .logo img.hidden {
+            opacity: 0;
+        }

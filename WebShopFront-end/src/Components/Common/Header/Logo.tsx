@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '././Logo.css'; // Импортируйте стили
+import './Logo.css'; // Импортируйте стили
 
 const Logo = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -13,18 +13,16 @@ const Logo = () => {
     };
 
     return (
-        <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="logo" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ cursor: 'pointer', marginRight: '10px' }}>
             <img
-                src={isHovered ? '/images/store-hover.png' : '/images/store-x.png'}
+                src="/images/store-x.png"
                 alt="Store Icon"
-                width="48"
-                height="48"
-                style={{
-                    marginRight: '10px',
-                    cursor: 'pointer',
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                className={isHovered ? 'hidden' : ''}
+            />
+            <img
+                src="/images/store-hover.png"
+                alt="Store Icon"
+                className={isHovered ? '' : 'hidden'}
             />
             {/* Изображение магазина */}
         </div>
