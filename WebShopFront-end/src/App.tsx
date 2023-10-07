@@ -12,7 +12,7 @@ const theme = createTheme({
         mode: 'dark', // Устанавливаем темный режим
         primary: {
             main: '#e53935',
-            dark: '#7c4dff',
+            dark: '#FF26F8',
             contrastText: '#fff' // Текст в контрастном цвете для второстепенного цвета
         },
         secondary: {
