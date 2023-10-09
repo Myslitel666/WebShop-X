@@ -3,15 +3,18 @@
 //MyComponents Import
 import Logo from '../Header/Logo';
 import ShopName from './ShopName';
+import { useColorMode } from '../../../ColorModeContext';
+import MyButton from '../MyButton';
 
 //MUI Import
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
-import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Header: React.FC = () => {
+    const { toggleColorMode } = useColorMode();
+
     return (
         <AppBar position="static">
             <Toolbar>
@@ -30,29 +33,35 @@ const Header: React.FC = () => {
                             marginRight: '10px'
                         }}
                     />
-                    <Button
+                    <MyButton
                         variant="contained"
                         color="primary"
                         startIcon={<SearchIcon />}
                         style={{ marginRight: '180px' }}
                     >
                         Search
-                    </Button>
+                    </MyButton>
                 </div>
-                <Button variant="outlined" color="primary"
+                {/*position: 'static' для исправления багов смещения объектов*/}
+                {/*во время увеличения лого*/}
+                <MyButton variant="outlined" color="primary"
                     style={{
                         marginRight: '10px',
-                        borderWidth: '2px'
+                        borderWidth: '2px',
+                        position: 'static',
                     }}>
                     Sign in
-                </Button>
-                <Button variant="outlined" color="primary"
+                </MyButton>
+                <MyButton variant="outlined" color="primary"
                     style={{
-                        marginRight: '-12px',
-                        borderWidth: '2px'
-                    }}>
+                        marginRight: '-10px',
+                        borderWidth: '2px',
+                        position: 'static',
+                        //transition: 'background-color 5.3s ease;'
+                    }}
+                >
                     Sign up
-                </Button>
+                </MyButton>
             </Toolbar>
         </AppBar>
     );

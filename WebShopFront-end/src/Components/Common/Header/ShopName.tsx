@@ -26,7 +26,7 @@ const ShopName: React.FC = () => {
             sx={{
                 cursor: 'pointer',
                 color: isHovered ? `${primaryDarkColor}` : `${primaryMainColor}`,
-                transition: 'color 0.3s ease'
+                transition: 'color 1s ease'
             }}
         >
             WebShop X

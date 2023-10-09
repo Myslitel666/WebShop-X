@@ -1,31 +1,55 @@
-import React, { useState } from 'react';
-import './Logo.css'; // ������������ �����
+﻿import React, { useState } from 'react';
+import './Logo.css';
+import { useColorMode } from '../../../ColorModeContext';
 
 const Logo = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const { toggleColorMode } = useColorMode();
+    const [isNeedChangeIcon, setIsNeedChangeIcon] = useState(false);
+    const [isFirstImage, setIsFirstImage] = useState(true);
 
+    //Наведение мыши на Object
     const handleMouseEnter = () => {
-        setIsHovered(true);
+        toggleImages();
+        setIsNeedChangeIcon(true);
     };
 
+    //Курсор мыши покидает область изображения
     const handleMouseLeave = () => {
-        setIsHovered(false);
+        if (isNeedChangeIcon) {
+            toggleImages();
+            setIsNeedChangeIcon(false);
+        }
+    };
+
+    //Щелчок по изображению
+    const handleThemeToggle = () => {
+        toggleColorMode();
+        setIsNeedChangeIcon(!isNeedChangeIcon);
+    };
+
+    //Смена изображения
+    const toggleImages = () => {
+        setIsFirstImage(prevState => !prevState);
+        //setIsClicked(false);
     };
 
     return (
-        <div className="logo"
+        <div
+            className="nvdTREq3cVVVVVH"
+            onClick={handleThemeToggle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{ cursor: 'pointer', marginRight: '10px' }}>
+            style={{ cursor: 'pointer', marginRight: '10px' }}
+        >
             <img
-                src="/images/store-x.png"
+                src={isFirstImage ? '/images/store-x.png' : '/images/store-hover.png'}
                 alt="Store Icon"
-                className={isHovered ? 'hidden' : ''}
+                className={!isFirstImage ? 'bonvogggc' : ''}
             />
             <img
-                src="/images/store-hover.png"
+                src={isFirstImage ? '/images/store-x.png' : '/images/store-hover.png'}
                 alt="Store Icon"
-                className={isHovered ? '' : 'hidden'}
+                className={!isFirstImage ? '' : 'bonvogggc'}
             />
         </div>
     );

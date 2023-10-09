@@ -1,13 +1,14 @@
 /* Logo.css */
-.logo {
+.nvdTREq3cVVVVVH {
     position: relative;
     display: flex;
     align-items: center;
     width: 48px; /* Ширина изображения */
     height: 48px; /* Высота изображения */
+    transition: transform 1s ease;
 }
 
-.logo img {
+.nvdTREq3cVVVVVH img {
     width: 100%; /* Сделать изображение 100% ширины родительского элемента */
     height: 100%; /* Сделать изображение 100% высоты родительского элемента */
     object-fit: cover; /* Сохранять пропорции и обрезать изображение, чтобы оно полностью покрывало родительский элемент */
@@ -17,10 +18,10 @@
     transition: opacity 0.3s ease; /* Плавный переход для opacity */
 }
 
-.logo img.hidden {
+.nvdTREq3cVVVVVH img.bonvogggc {
     opacity: 0;
 }
 
-.logo:hover {
-    transform: scale(1.1);
+.nvdTREq3cVVVVVH:hover {
+    transform: scale(1.2);
 }

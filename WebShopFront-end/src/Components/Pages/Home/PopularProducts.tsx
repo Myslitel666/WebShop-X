@@ -4,6 +4,7 @@ import { Paper, Typography, Grid, Box, } from '@mui/material';
 import { Button } from '@mui/material';
 import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
+import MyButton from '../../Common/MyButton'
 
 const PopularProducts: React.FC = () => {
     const [popularProducts, setPopularProducts] = useState<{
@@ -76,7 +77,11 @@ const PopularProducts: React.FC = () => {
                                 fontWeight="bold"
                                 variant="h5"
                                 color="primary"
-                                sx={{ marginTop: '7px' }}>
+                                sx={{
+                                    marginTop: '7px',
+                                    transition: 'color 1s ease'
+                                }}
+                                >
                                 {product.price} ₽
                             </Typography>
                             <Typography
@@ -84,12 +89,12 @@ const PopularProducts: React.FC = () => {
                                 variant="subtitle1">
                                 {product.productName}
                             </Typography>
-                            <Button
+                            <MyButton
                                 variant="contained"
                                 color="primary"
                                 sx={{ marginBottom: '5px', }}>
                                 Add to Cart
-                            </Button>
+                            </MyButton>
                         </Box>
                     </Grid>
                 ))}

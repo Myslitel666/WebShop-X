@@ -17,3 +17,7 @@
 .category-item:hover {
     color: red;
 }
+
+#b {
+    transition: transform 0s ease;
+}

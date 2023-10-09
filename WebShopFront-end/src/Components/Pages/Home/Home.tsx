@@ -10,15 +10,9 @@ const Home: React.FC = () => {
         <div>
             <Header />
             <CategoryMenu />
-            {/* Вставьте другие компоненты и содержимое страницы здесь */}
             <PopularProducts />
         </div>
     );
 };
 
 export default Home;
-
-
-
-
-
