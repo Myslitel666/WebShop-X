@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useState, ReactNode } from 'react';
+﻿import React, { createContext, useContext, useMemo, useState, ReactNode } from 'react';
 import { ThemeProvider, createTheme, Theme } from '@mui/material';
 
 interface ColorModeContextProps {
@@ -34,10 +34,14 @@ export const ColorModeProvider: React.FC<ColorModeProviderProps> = ({ children }
                     fontFamily: 'Merienda, cursive'
                 },
                 palette: {
-                    mode: 'dark', // ������ ������������� ����� dark
+                    mode: 'dark', // âñåãäà ôèêñèðîâàííûé ðåæèì dark
                     primary: {
                         main: MyTheme === 'red' ? '#FF1A1A' : '#FF19F8',
                         dark: MyTheme === 'red' ? '#FF19F8' : '#FF1A1A',
+                    },
+                    text: {
+                        primary: '#FFFFFF', // Устанавливаем цвет основного текста в темной теме
+                        secondary: '#CCCCCC', // Устанавливаем цвет второстепенного текста в темной теме (например, для подзаголовков и т. д.)
                     },
                 },
             }),

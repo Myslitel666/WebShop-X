@@ -1,23 +1,23 @@
-/*Обрезка текста*/
+п»ї/*РћР±СЂРµР·РєР° С‚РµРєСЃС‚Р°*/
 .product-name {
     height: 60px;
     /*Format content*/
     display: -webkit-box;
-    /*Вертикльный content*/
+    /*Р’РµСЂС‚РёРєР»СЊРЅС‹Р№ content*/
     -webkit-box-orient: vertical;
-    /*Обрезка текста под height*/
+    /*РћР±СЂРµР·РєР° С‚РµРєСЃС‚Р° РїРѕРґ height*/
     overflow: hidden;
-    /*Добавление многоточия после строк*/
+    /*Р”РѕР±Р°РІР»РµРЅРёРµ РјРЅРѕРіРѕС‚РѕС‡РёСЏ РїРѕСЃР»Рµ СЃС‚СЂРѕРє*/
     -webkit-line-clamp: 2;
 }
 .product-box {
-    border: 2px solid; /* Устанавливаем толщину обводки в исходное состояние */
+    border: 2px solid; /* РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј С‚РѕР»С‰РёРЅСѓ РѕР±РІРѕРґРєРё РІ РёСЃС…РѕРґРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ */
     border-radius: 10px;
     padding: 10px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease, border-color 1s ease; /* Плавный переход для всех свойств */
-    backface-visibility: hidden; /* Фиксим баг скачков текста */
+    transition: transform 0.3s ease, border-color 1s ease; /* РџР»Р°РІРЅС‹Р№ РїРµСЂРµС…РѕРґ РґР»СЏ РІСЃРµС… СЃРІРѕР№СЃС‚РІ */
+    backface-visibility: hidden; /* Р¤РёРєСЃРёРј Р±Р°Рі СЃРєР°С‡РєРѕРІ С‚РµРєСЃС‚Р° */
 }
 
 .product-box:hover {

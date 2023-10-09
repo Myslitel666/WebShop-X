@@ -1,8 +1,8 @@
-import React from 'react';
+п»їimport React from 'react';
 import Button, { ButtonProps } from '@mui/material/Button';
 
 interface MyButtonProps extends ButtonProps {
-    // Дополнительные свойства, если необходимо
+    // Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ СЃРІРѕР№СЃС‚РІР°, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ
 }
 
 const MyButton: React.FC<MyButtonProps> = (props) => {
@@ -10,8 +10,8 @@ const MyButton: React.FC<MyButtonProps> = (props) => {
         <Button
             {...props}
             sx={{
-                transition: 'background-color 1s ease, color 1s ease',
-                //...props.sx // Позволяет вам передавать другие стили через props
+                transition: 'background-color 1s ease, color 1s ease, border-color 1s ease'
+                //...props.sx // РџРѕР·РІРѕР»СЏРµС‚ РІР°Рј РїРµСЂРµРґР°РІР°С‚СЊ РґСЂСѓРіРёРµ СЃС‚РёР»Рё С‡РµСЂРµР· props
             }}
         />
     );

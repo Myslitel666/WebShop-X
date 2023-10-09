@@ -12,14 +12,14 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import './CategoryMenu.css';
 
 const renderIcon = (iconName: string) => {
-const iconMappings: { [key: string]: React.ReactNode } = {
-    'Checkroom': <Checkroom />,
-    'Restaurant': <Restaurant />,
-    'Cable': <Cable />,
-    'BeachAccess': <BeachAccess />,
-    'Stroller': <Stroller />,
-    'CoffeeMaker': <CoffeeMaker />,
-    'Archive': <ArchiveIcon />,
+    const iconMappings: { [key: string]: React.ReactNode } = {
+        'Checkroom': <Checkroom />,
+        'Restaurant': <Restaurant />,
+        'Cable': <Cable />,
+        'BeachAccess': <BeachAccess />,
+        'Stroller': <Stroller />,
+        'CoffeeMaker': <CoffeeMaker />,
+        'Archive': <ArchiveIcon />,
     };
     return iconMappings[iconName] || null;
 };
@@ -32,7 +32,7 @@ const CategoryMenu: React.FC = () => {
             try {
                 const response = await axios.get<{
                     categoryName: string; iconUrl: string
-                    }[]>('https://localhost:7275/api/home/categories');
+                }[]>('https://localhost:7275/api/home/categories');
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

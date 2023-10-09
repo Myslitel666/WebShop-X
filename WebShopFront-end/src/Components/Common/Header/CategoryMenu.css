@@ -1,4 +1,4 @@
-/* CategoryMenu.css */
+﻿/* CategoryMenu.css */
 
 .category-menu {
     display: flex;
@@ -12,12 +12,9 @@
     align-items: center;
     padding: 5px 10px;
     cursor: pointer;
+    transition: color 1s ease;
 }
 
 .category-item:hover {
     color: red;
-}
-
-#b {
-    transition: transform 0s ease;
 }
