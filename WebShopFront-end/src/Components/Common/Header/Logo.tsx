@@ -7,10 +7,14 @@ const Logo = () => {
     const [isNeedChangeIcon, setIsNeedChangeIcon] = useState(false);
     const [isFirstImage, setIsFirstImage] = useState(true);
 
+    const [isHovered, setIsHovered] = useState(false);
+
     //Наведение мыши на Object
     const handleMouseEnter = () => {
         toggleImages();
         setIsNeedChangeIcon(true);
+
+        setIsHovered(true);
     };
 
     //Курсор мыши покидает область изображения
@@ -19,6 +23,8 @@ const Logo = () => {
             toggleImages();
             setIsNeedChangeIcon(false);
         }
+
+        setIsHovered(false);
     };
 
     //Щелчок по изображению
@@ -34,22 +40,19 @@ const Logo = () => {
     };
 
     return (
-        <div
-            className="nvdTREq3cVVVVVH"
+        <div className={`logo ${isHovered ? 'hovered' : ''}`}
             onClick={handleThemeToggle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ cursor: 'pointer', marginRight: '10px' }}
         >
-            <img
+            <img className={`image ${isHovered ? 'hidden' : ''}`}
                 src={isFirstImage ? '/images/store-x.png' : '/images/store-hover.png'}
                 alt="Store Icon"
-                className={!isFirstImage ? 'bonvogggc' : ''}
             />
-            <img
+            <img className={`image ${isHovered ? '' : 'hidden'}`}
                 src={isFirstImage ? '/images/store-x.png' : '/images/store-hover.png'}
                 alt="Store Icon"
-                className={!isFirstImage ? '' : 'bonvogggc'}
             />
         </div>
     );

@@ -27,7 +27,7 @@ namespace WebShopBack_end
             {
                 options.AddPolicy(MyAllowSpecificOrigins, policy =>
                 {
-                    policy.WithOrigins().AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    policy.WithOrigins("https://localhost:7275").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
 
