@@ -1,4 +1,4 @@
-using Models;
+п»їusing Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
@@ -49,7 +49,7 @@ namespace WebShopBack_end
 
             app.MapGet("/api/categories/icon", () =>
             {
-                // Вместо возвращения кода иконки, верните только имя иконки
+                // Р’РјРµСЃС‚Рѕ РІРѕР·РІСЂР°С‰РµРЅРёСЏ РєРѕРґР° РёРєРѕРЅРєРё, РІРµСЂРЅРёС‚Рµ С‚РѕР»СЊРєРѕ РёРјСЏ РёРєРѕРЅРєРё
                 return Results.Text("CoffeeMaker");
             });
 

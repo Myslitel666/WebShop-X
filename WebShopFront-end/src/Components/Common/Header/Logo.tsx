@@ -1,4 +1,6 @@
 ﻿import React, { useState } from 'react';
+
+//CSS Import
 import './Logo.css';
 import { useColorMode } from '../../../ColorModeContext';
 
@@ -36,7 +38,6 @@ const Logo = () => {
     //Смена изображения
     const toggleImages = () => {
         setIsFirstImage(prevState => !prevState);
-        //setIsClicked(false);
     };
 
     return (

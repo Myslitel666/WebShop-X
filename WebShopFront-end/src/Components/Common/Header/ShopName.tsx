@@ -1,5 +1,7 @@
 ﻿import React, { useState } from 'react';
-import Typography from '@mui/material/Typography';
+
+//MUI Import
+import Typography from '@mui/material/Typography';  
 import { useTheme } from '@mui/material/styles';
 
 const ShopName: React.FC = () => {

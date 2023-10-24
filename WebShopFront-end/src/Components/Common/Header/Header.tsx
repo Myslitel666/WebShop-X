@@ -57,7 +57,6 @@ const Header: React.FC = () => {
                         marginRight: '-10px',
                         borderWidth: '2px',
                         position: 'static',
-                        //transition: 'background-color 5.3s ease;'
                     }}
                 >
                     Sign up

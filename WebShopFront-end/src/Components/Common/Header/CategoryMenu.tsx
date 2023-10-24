@@ -1,26 +1,13 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-//MUI Import
-import {
-    Checkroom, Restaurant, Cable,
-    Stroller, CoffeeMaker, BeachAccess
-} from '@mui/icons-material';
-import ArchiveIcon from '@mui/icons-material/Archive';
+//MyComponents Import
+import { iconMappings } from './IconMappings';
 
 //CSS Import
 import './CategoryMenu.css';
 
 const renderIcon = (iconName: string) => {
-    const iconMappings: { [key: string]: React.ReactNode } = {
-        'Checkroom': <Checkroom />,
-        'Restaurant': <Restaurant />,
-        'Cable': <Cable />,
-        'BeachAccess': <BeachAccess />,
-        'Stroller': <Stroller />,
-        'CoffeeMaker': <CoffeeMaker />,
-        'Archive': <ArchiveIcon />,
-    };
     return iconMappings[iconName] || null;
 };
 
