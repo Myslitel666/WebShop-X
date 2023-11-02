@@ -11,6 +11,8 @@ const renderIcon = (iconName: string) => {
     return iconMappings[iconName] || null;
 };
 
+const apiUrl = process.env.REACT_APP_API_URL as string;
+
 const CategoryMenu: React.FC = () => {
     const [data, setData] = useState<{ categoryName: string; iconUrl: string }[]>([]);
 
@@ -19,7 +21,7 @@ const CategoryMenu: React.FC = () => {
             try {
                 const response = await axios.get<{
                     categoryName: string; iconUrl: string
-                }[]>('https://localhost:7275/api/home/categories');
+                }[]>(`${apiUrl}/api/home/categories`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -28,8 +30,6 @@ const CategoryMenu: React.FC = () => {
 
         fetchData();
     }, []);
-
-    console.log(data)
 
     return (
         <div className="category-menu">

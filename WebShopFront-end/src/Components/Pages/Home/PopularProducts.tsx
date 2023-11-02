@@ -1,7 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Paper, Typography, Grid, Box, } from '@mui/material';
-import { Button } from '@mui/material';
 import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
 import MyButton from '../../Common/MyButton'
@@ -26,10 +25,12 @@ const PopularProducts: React.FC = () => {
     const PrimaryMainColor = theme.palette.primary.main;
     const PrimaryDarkColor = theme.palette.primary.dark;
 
+    const apiUrl = process.env.REACT_APP_API_URL as string;
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://localhost:7275/api/home/popular-products');
+                const response = await axios.get(`${apiUrl}/api/home/popular-products`);
                 setPopularProducts(response.data);
             } catch (error) {
                 console.error('Error fetching popular products:', error);
