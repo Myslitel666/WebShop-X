@@ -3,7 +3,10 @@ import axios from 'axios';
 import { Paper, Typography, Grid, Box, } from '@mui/material';
 import './PopularProducts.css'; // Импортируйте стили
 import { useTheme } from '@mui/material/styles';
+
+//MyComponents Import
 import MyButton from '../../Common/MyButton'
+import MyBox from '../../Common/MyBox';
 
 const PopularProducts: React.FC = () => {
     const [popularProducts, setPopularProducts] = useState<{
@@ -49,7 +52,7 @@ const PopularProducts: React.FC = () => {
                 }}>
                 {popularProducts.map((product) => (
                     <Grid item xs={2} md={2} key={product.productId}>
-                        <Box
+                        <MyBox
                             onMouseEnter={() => handleMouseEnter(product.productId)}
                             onMouseLeave={handleMouseLeave}
                             sx={{
@@ -96,7 +99,7 @@ const PopularProducts: React.FC = () => {
                                 sx={{ marginBottom: '5px', }}>
                                 Add to Cart
                             </MyButton>
-                        </Box>
+                        </MyBox>
                     </Grid>
                 ))}
             </Grid>

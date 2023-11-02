@@ -3,6 +3,7 @@ import axios from 'axios';
 
 //MyComponents Import
 import { iconMappings } from './IconMappings';
+import MyLink from '../MyLink';
 
 //CSS Import
 import './CategoryMenu.css';
@@ -35,8 +36,10 @@ const CategoryMenu: React.FC = () => {
         <div className="category-menu">
             {data.map((category, index) => (
                 <div key={index} className="category-item">
-                    {renderIcon(category.iconUrl) || <div>No Icon </div>}
-                    {category.categoryName}
+                    <MyLink>
+                        {renderIcon(category.iconUrl) || <div>No Icon </div>}
+                        {category.categoryName}
+                    </MyLink>
                 </div>
             ))}
         </div>
